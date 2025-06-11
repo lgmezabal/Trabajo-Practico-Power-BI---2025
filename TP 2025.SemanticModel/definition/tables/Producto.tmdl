@@ -1,0 +1,51 @@
+table Producto
+	lineageTag: f4fd734c-d9c9-4587-8e80-09006bef4cc4
+
+	column SK_Producto
+		dataType: int64
+		formatString: 0
+		lineageTag: a49ba74e-0910-4166-9f5f-15ccbf355801
+		summarizeBy: none
+		sourceColumn: SK_Producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Producto
+		dataType: string
+		lineageTag: 316a850f-1f62-4d55-91b5-3b729416013a
+		summarizeBy: none
+		sourceColumn: Producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubCategoriaProducto
+		dataType: string
+		lineageTag: 8fe8b9b1-5474-44a5-9301-444e6a6045a4
+		summarizeBy: none
+		sourceColumn: SubCategoriaProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Categoria de Producto'
+		dataType: string
+		lineageTag: bc8ff8a9-75aa-4e94-ad27-26630558b4ce
+		summarizeBy: none
+		sourceColumn: Categoria de Producto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Producto = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\Producto.xlsx"), null, true),
+				    Producto_Sheet = Origen{[Item="Producto",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Producto_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_Producto", Int64.Type}, {"Producto", type text}, {"SubCategoriaProducto", type text}, {"Categoria de Producto", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

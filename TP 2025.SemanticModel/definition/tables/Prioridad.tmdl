@@ -1,0 +1,43 @@
+table Prioridad
+	lineageTag: 2cb16d48-9a56-4962-a4ab-0215ec7c8f3e
+
+	column Sk_Prioridad
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fe87391-b021-4e1e-8e39-5975cb79e3a3
+		summarizeBy: none
+		sourceColumn: Sk_Prioridad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo_Prioridad
+		dataType: string
+		lineageTag: bdb20a80-8aeb-49ae-b729-bce5d1681f78
+		summarizeBy: none
+		sourceColumn: Codigo_Prioridad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Prioridad
+		dataType: string
+		lineageTag: 2f5e9718-173a-4921-860f-251ce7ddd89d
+		summarizeBy: none
+		sourceColumn: Prioridad
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Prioridad = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\Prioridad.xlsx"), null, true),
+				    Prioridad_Sheet = Origen{[Item="Prioridad",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Prioridad_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Sk_Prioridad", Int64.Type}, {"Codigo_Prioridad", type text}, {"Prioridad", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

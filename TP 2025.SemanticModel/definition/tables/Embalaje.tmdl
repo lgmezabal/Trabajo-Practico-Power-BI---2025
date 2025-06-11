@@ -1,0 +1,43 @@
+table Embalaje
+	lineageTag: e98c895b-46bc-433d-a38b-9ceb1ae429b7
+
+	column SK_Embalaje
+		dataType: int64
+		formatString: 0
+		lineageTag: 563c4097-c27a-4b5a-b342-da859275530d
+		summarizeBy: none
+		sourceColumn: SK_Embalaje
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo_Embalaje
+		dataType: string
+		lineageTag: 19d65fbf-2e5f-463c-abe5-1cc882665e06
+		summarizeBy: none
+		sourceColumn: Codigo_Embalaje
+
+		annotation SummarizationSetBy = Automatic
+
+	column Embalaje
+		dataType: string
+		lineageTag: cdf7a3a4-6233-4c1e-a437-4de8459435aa
+		summarizeBy: none
+		sourceColumn: Embalaje
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Embalaje = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\Embalaje.xlsx"), null, true),
+				    Embalaje_Sheet = Origen{[Item="Embalaje",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Embalaje_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_Embalaje", Int64.Type}, {"Codigo_Embalaje", type text}, {"Embalaje", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

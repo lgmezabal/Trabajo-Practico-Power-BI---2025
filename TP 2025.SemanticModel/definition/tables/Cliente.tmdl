@@ -1,0 +1,55 @@
+table Cliente
+	lineageTag: 0bd9dc5f-78ff-4ebc-8f31-e9ec680e7032
+
+	column SK_Cliente
+		dataType: int64
+		formatString: 0
+		lineageTag: 89e943f6-7a25-4ecf-94a1-722a3a1a0867
+		summarizeBy: none
+		sourceColumn: SK_Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cliente
+		dataType: string
+		lineageTag: 91d91de7-52b4-4fca-91c5-6c128deae1b0
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitud
+		dataType: double
+		lineageTag: bcb19b2b-dc7f-4b99-bf64-74dc684043e2
+		summarizeBy: none
+		sourceColumn: Latitud
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitud
+		dataType: double
+		lineageTag: 8b1cd006-f77d-4cd6-b8ea-138693b4ff79
+		summarizeBy: none
+		sourceColumn: Longitud
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Cliente = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\Cliente.xlsx"), null, true),
+				    Cliente_Sheet = Origen{[Item="Cliente",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Cliente_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_Cliente", Int64.Type}, {"Cliente", type text}, {"Latitud", type number}, {"Longitud", type number}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

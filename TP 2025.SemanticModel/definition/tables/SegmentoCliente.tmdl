@@ -1,0 +1,43 @@
+table SegmentoCliente
+	lineageTag: 9f02f19e-d411-49fd-8627-50b00063496e
+
+	column SK_SegmentoCliente
+		dataType: int64
+		formatString: 0
+		lineageTag: d25fd7ac-31e8-469a-bd31-f33418cba4e7
+		summarizeBy: none
+		sourceColumn: SK_SegmentoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo_SegmentoCliente
+		dataType: string
+		lineageTag: c2c03e82-6550-4610-b4ff-e0306a9943a8
+		summarizeBy: none
+		sourceColumn: Codigo_SegmentoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column SegmentoCliente
+		dataType: string
+		lineageTag: 63dc1a8a-b8dd-4c7d-9e65-9f8143e59854
+		summarizeBy: none
+		sourceColumn: SegmentoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SegmentoCliente = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\SegmentoCliente.xlsx"), null, true),
+				    SegmentoCliente_Sheet = Origen{[Item="SegmentoCliente",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(SegmentoCliente_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_SegmentoCliente", Int64.Type}, {"Codigo_SegmentoCliente", type text}, {"SegmentoCliente", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

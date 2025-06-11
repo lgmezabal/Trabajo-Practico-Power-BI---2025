@@ -1,0 +1,43 @@
+table CentroDistribucion
+	lineageTag: 395c0445-4d25-4a58-965a-39d1cfa34460
+
+	column SK_CentroDistribucion
+		dataType: int64
+		formatString: 0
+		lineageTag: 1232e4e2-9743-483c-bc22-2fc445502146
+		summarizeBy: none
+		sourceColumn: SK_CentroDistribucion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo_CentroDistribucion
+		dataType: string
+		lineageTag: e7f630f0-9375-414f-ab60-f921defcf79e
+		summarizeBy: none
+		sourceColumn: Codigo_CentroDistribucion
+
+		annotation SummarizationSetBy = Automatic
+
+	column CentroDistribucion
+		dataType: string
+		lineageTag: 4f2acefd-d121-4812-8762-32e3ebc11058
+		summarizeBy: none
+		sourceColumn: CentroDistribucion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CentroDistribucion = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\CentroDistribucion.xlsx"), null, true),
+				    CentroDistribucion_Sheet = Origen{[Item="CentroDistribucion",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(CentroDistribucion_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_CentroDistribucion", Int64.Type}, {"Codigo_CentroDistribucion", type text}, {"CentroDistribucion", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

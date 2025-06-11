@@ -1,0 +1,42 @@
+relationship a0277641-a93e-47c4-a7bd-ce1a4122a6c6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Ventas.'Fecha Venta'
+	toColumn: LocalDateTable_cc586e96-d08b-498b-9b62-f2b327aa3580.Date
+
+relationship 46a54c28-54cc-433f-8c2c-9e23f2b07049
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Ventas.Fecha_Envio
+	toColumn: LocalDateTable_26d41204-dcd8-4173-8195-7a6c553a033c.Date
+
+relationship AutoDetected_17ec8ef7-8cc7-49be-a98d-8c48094e7d39
+	fromColumn: Ventas.SK_Cliente
+	toColumn: Cliente.SK_Cliente
+
+relationship AutoDetected_b01b8180-82cb-4021-8d3d-1b64b15f0361
+	fromColumn: Ventas.SK_SegmentoCliente
+	toColumn: SegmentoCliente.SK_SegmentoCliente
+
+relationship AutoDetected_4aa04e32-d80a-4552-ae25-6dcf56c61ff9
+	fromColumn: Ventas.SK_Producto
+	toColumn: Producto.SK_Producto
+
+relationship AutoDetected_ff30925e-5428-4e5d-96ca-b4c51f43313c
+	fromColumn: Ventas.SK_Provincia
+	toColumn: Provincia.SK_Provincia
+
+relationship AutoDetected_5e8cb027-f424-48cb-99ca-bb58bc6c0564
+	fromColumn: Ventas.SK_CentroDistribucion
+	toColumn: CentroDistribucion.SK_CentroDistribucion
+
+relationship AutoDetected_4f1e365f-f8aa-4996-9d43-2cf449770d36
+	fromColumn: Ventas.SK_Prioridad
+	toColumn: Prioridad.Sk_Prioridad
+
+relationship AutoDetected_9a40f7d8-d951-47cd-bda8-bb64ece197a5
+	fromColumn: Ventas.SK_FormaDeEnvio
+	toColumn: FormaDeEnvio.SK_FormaDeEnvio
+
+relationship AutoDetected_62cbda38-d4f5-4509-9d83-c30b9645bc3a
+	fromColumn: Ventas.SK_Embalaje
+	toColumn: Embalaje.SK_Embalaje
+

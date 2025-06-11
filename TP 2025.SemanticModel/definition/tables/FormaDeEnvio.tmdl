@@ -1,0 +1,60 @@
+table FormaDeEnvio
+	lineageTag: db466178-e450-4e1f-ba3f-1488f33e47a3
+
+	column SK_FormaDeEnvio
+		dataType: int64
+		formatString: 0
+		lineageTag: 1036af7e-d345-4840-934d-0bc4437acff9
+		summarizeBy: none
+		sourceColumn: SK_FormaDeEnvio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo_FormaDeEnvio
+		dataType: string
+		lineageTag: 1ec1bef4-a92b-401a-937a-cd07918de8b3
+		summarizeBy: none
+		sourceColumn: Codigo_FormaDeEnvio
+
+		annotation SummarizationSetBy = Automatic
+
+	column FormaDeEnvio
+		dataType: string
+		lineageTag: 6c0ff57a-b752-44a5-88c8-00d36a8cb5aa
+		summarizeBy: none
+		sourceColumn: FormaDeEnvio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Costo
+		dataType: int64
+		formatString: 0
+		lineageTag: e12627d1-0f82-4d0c-bb45-fb912a79a1b5
+		summarizeBy: none
+		sourceColumn: Costo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Empresa
+		dataType: string
+		lineageTag: db2b0f3c-9e9c-44cc-9a59-266be288aa86
+		summarizeBy: none
+		sourceColumn: Empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FormaDeEnvio = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\FormaDeEnvio.xlsx"), null, true),
+				    FormaDeEnvio_Sheet = Origen{[Item="FormaDeEnvio",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(FormaDeEnvio_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_FormaDeEnvio", Int64.Type}, {"Codigo_FormaDeEnvio", type text}, {"FormaDeEnvio", type text}, {"Costo", Int64.Type}, {"Empresa", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

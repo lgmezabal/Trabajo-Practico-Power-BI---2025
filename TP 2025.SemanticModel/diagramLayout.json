@@ -1,0 +1,139 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1129.5,
+            "y": 467.5
+          },
+          "nodeIndex": "Ventas",
+          "nodeLineageTag": "5edd011d-5eb3-46d8-b97a-9764c017230f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 132.5,
+            "y": 874
+          },
+          "nodeIndex": "CentroDistribucion",
+          "nodeLineageTag": "395c0445-4d25-4a58-965a-39d1cfa34460",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 31.5,
+            "y": 467
+          },
+          "nodeIndex": "Cliente",
+          "nodeLineageTag": "0bd9dc5f-78ff-4ebc-8f31-e9ec680e7032",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 438,
+            "y": 31.5
+          },
+          "nodeIndex": "Embalaje",
+          "nodeLineageTag": "e98c895b-46bc-433d-a38b-9ceb1ae429b7",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 967,
+            "y": 22.5
+          },
+          "nodeIndex": "FormaDeEnvio",
+          "nodeLineageTag": "db466178-e450-4e1f-ba3f-1488f33e47a3",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1491,
+            "y": 94
+          },
+          "nodeIndex": "Prioridad",
+          "nodeLineageTag": "2cb16d48-9a56-4962-a4ab-0215ec7c8f3e",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1940,
+            "y": 2
+          },
+          "nodeIndex": "Producto",
+          "nodeLineageTag": "f4fd734c-d9c9-4587-8e80-09006bef4cc4",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 2151.5,
+            "y": 508
+          },
+          "nodeIndex": "Provincia",
+          "nodeLineageTag": "6dfaae17-7241-4102-b9cd-8e59560231ae",
+          "size": {
+            "height": 219,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1520.5,
+            "y": 976.5
+          },
+          "nodeIndex": "SegmentoCliente",
+          "nodeLineageTag": "9f02f19e-d411-49fd-8627-50b00063496e",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 8
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 40,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

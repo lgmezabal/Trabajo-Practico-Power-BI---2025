@@ -1,0 +1,218 @@
+table Ventas
+	lineageTag: 5edd011d-5eb3-46d8-b97a-9764c017230f
+
+	column SK_Cliente
+		dataType: int64
+		formatString: 0
+		lineageTag: 251dbbfb-69a7-4411-8c62-6807713016cf
+		summarizeBy: none
+		sourceColumn: SK_Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_SegmentoCliente
+		dataType: int64
+		formatString: 0
+		lineageTag: 76fcba94-afc6-4620-a99d-0313f122269f
+		summarizeBy: none
+		sourceColumn: SK_SegmentoCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_Producto
+		dataType: int64
+		formatString: 0
+		lineageTag: 302214fa-8921-4f89-a045-310b2e717466
+		summarizeBy: none
+		sourceColumn: SK_Producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_Provincia
+		dataType: int64
+		formatString: 0
+		lineageTag: 9034f31e-b0cd-402e-a1c9-dda64682340b
+		summarizeBy: none
+		sourceColumn: SK_Provincia
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_CentroDistribucion
+		dataType: int64
+		formatString: 0
+		lineageTag: a0b92915-8f3c-4101-ad04-89a96e9d74a7
+		summarizeBy: none
+		sourceColumn: SK_CentroDistribucion
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_Prioridad
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f0cfc4e-b937-4ed6-81ba-2668033ea2da
+		summarizeBy: none
+		sourceColumn: SK_Prioridad
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_FormaDeEnvio
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f674156-581e-483f-8b80-343cfa780bc1
+		summarizeBy: none
+		sourceColumn: SK_FormaDeEnvio
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK_Embalaje
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c1474c1-2f2c-4070-bcb2-264fbb440d5b
+		summarizeBy: none
+		sourceColumn: SK_Embalaje
+
+		annotation SummarizationSetBy = Automatic
+
+	column Numero_Orden
+		dataType: int64
+		formatString: 0
+		lineageTag: d17e0ff0-3bb1-4a19-bcb0-f6ccf64d8008
+		summarizeBy: sum
+		sourceColumn: Numero_Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Venta'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 64c42dba-f525-465a-abce-7d03f15fc568
+		summarizeBy: none
+		sourceColumn: Fecha Venta
+
+		variation Variación
+			isDefault
+			relationship: a0277641-a93e-47c4-a7bd-ce1a4122a6c6
+			defaultHierarchy: LocalDateTable_cc586e96-d08b-498b-9b62-f2b327aa3580.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Fecha_Envio
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 7ca36845-5259-4d0e-bece-2469f998f0fb
+		summarizeBy: none
+		sourceColumn: Fecha_Envio
+
+		variation Variación
+			isDefault
+			relationship: 46a54c28-54cc-433f-8c2c-9e23f2b07049
+			defaultHierarchy: LocalDateTable_26d41204-dcd8-4173-8195-7a6c553a033c.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Cantidad
+		dataType: int64
+		formatString: 0
+		lineageTag: 5d85fb85-369a-4ac3-8865-1fb067fdd619
+		summarizeBy: sum
+		sourceColumn: Cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor Venta'
+		dataType: double
+		lineageTag: d8e59e40-1627-4d17-afe7-cbd580f1c441
+		summarizeBy: sum
+		sourceColumn: Valor Venta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Descuento
+		dataType: double
+		lineageTag: d791d8eb-e7fa-4a96-8673-c3a3d1a2f2ce
+		summarizeBy: sum
+		sourceColumn: Descuento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Lucro
+		dataType: double
+		lineageTag: 72334c61-9063-479e-b61d-51fa1e529f10
+		summarizeBy: sum
+		sourceColumn: Lucro
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Precio Unitario'
+		dataType: double
+		lineageTag: 70ed559c-a27d-413e-8f97-762f1e965b95
+		summarizeBy: sum
+		sourceColumn: Precio Unitario
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Costo Envio'
+		dataType: double
+		lineageTag: 93dd53a4-aee3-45d9-b108-029346d118c7
+		summarizeBy: sum
+		sourceColumn: Costo Envio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CEP
+		dataType: int64
+		formatString: 0
+		lineageTag: 50150573-e876-446e-a06f-7e408ab6fda2
+		summarizeBy: sum
+		sourceColumn: CEP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Margen
+		dataType: double
+		lineageTag: b05fc545-d29e-4c29-9e09-273e0f6662ca
+		summarizeBy: none
+		sourceColumn: Margen
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Numero_Registro
+		dataType: int64
+		formatString: 0
+		lineageTag: e6093e5a-aff9-4d49-a11d-6b5dba02e5bd
+		summarizeBy: sum
+		sourceColumn: Numero_Registro
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Ventas = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\Ventas.xlsx"), null, true),
+				    Ventas_Sheet = Origen{[Item="Ventas",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Ventas_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_Cliente", Int64.Type}, {"SK_SegmentoCliente", Int64.Type}, {"SK_Producto", Int64.Type}, {"SK_Provincia", Int64.Type}, {"SK_CentroDistribucion", Int64.Type}, {"SK_Prioridad", Int64.Type}, {"SK_FormaDeEnvio", Int64.Type}, {"SK_Embalaje", Int64.Type}, {"Numero_Orden", Int64.Type}, {"Fecha Venta", type date}, {"Fecha_Envio", type date}, {"Cantidad", Int64.Type}, {"Valor Venta", type number}, {"Descuento", type number}, {"Lucro", type number}, {"Precio Unitario", type number}, {"Costo Envio", type number}, {"CEP", Int64.Type}, {"Margen", type number}, {"Numero_Registro", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

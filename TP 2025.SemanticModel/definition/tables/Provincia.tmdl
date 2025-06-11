@@ -1,0 +1,67 @@
+table Provincia
+	lineageTag: 6dfaae17-7241-4102-b9cd-8e59560231ae
+
+	column SK_Provincia
+		dataType: int64
+		formatString: 0
+		lineageTag: dbed7297-9572-4faa-804e-a3e791216f58
+		summarizeBy: none
+		sourceColumn: SK_Provincia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo_Provincia
+		dataType: string
+		lineageTag: 93a9dd41-c168-4c19-9b72-04fbd5232cd3
+		summarizeBy: none
+		sourceColumn: Codigo_Provincia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Provincia
+		dataType: string
+		lineageTag: 7c1f1e06-f950-4b45-b046-dcf2a1bc1b91
+		summarizeBy: none
+		sourceColumn: Provincia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 2f27741d-1c5d-417d-9990-0b574136c64f
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pais
+		dataType: string
+		lineageTag: fad44e79-b6ba-4d15-9ef5-077759b422e3
+		summarizeBy: none
+		sourceColumn: Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gerente
+		dataType: string
+		lineageTag: 568b164f-eb3a-4d7c-bb16-6f63dc0de1cb
+		summarizeBy: none
+		sourceColumn: Gerente
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Provincia = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\Provincia.xlsx"), null, true),
+				    Provincia_Sheet = Origen{[Item="Provincia",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Provincia_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_Provincia", Int64.Type}, {"Codigo_Provincia", type text}, {"Provincia", type text}, {"Region", type text}, {"Pais", type text}, {"Gerente", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

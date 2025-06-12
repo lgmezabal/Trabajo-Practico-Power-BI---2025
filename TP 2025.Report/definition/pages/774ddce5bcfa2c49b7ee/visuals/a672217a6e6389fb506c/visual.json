@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
-  "name": "0701d995c9ad6505c0f3",
+  "name": "a672217a6e6389fb506c",
   "position": {
-    "x": 106,
+    "x": 106.1923194641989,
     "y": 0,
     "z": 0,
-    "height": 720,
-    "width": 1066,
+    "height": 719.7479430351259,
+    "width": 1066.347874619664,
     "tabOrder": 0
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "Tiempo"
                     }
                   },
-                  "Property": "Año"
+                  "Property": "Mes Corto"
                 }
               },
-              "queryRef": "Tiempo.Año",
-              "nativeQueryRef": "Suma de Año",
+              "queryRef": "Tiempo.Mes Corto",
+              "nativeQueryRef": "Mes Corto",
               "active": true
             }
           ]
@@ -36,22 +36,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Ventas"
-                        }
-                      },
-                      "Property": "Valor Venta"
+                    "SourceRef": {
+                      "Entity": "Ventas"
                     }
                   },
-                  "Function": 0
+                  "Property": "Sum Valor Venta. YTD"
                 }
               },
-              "queryRef": "Sum(Ventas.Valor Venta)",
-              "nativeQueryRef": "Suma de Valor Venta"
+              "queryRef": "Ventas.Sum Valor Venta. YTD",
+              "nativeQueryRef": "Sum Valor Venta. YTD"
             }
           ]
         }
@@ -60,24 +55,18 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Ventas"
-                      }
-                    },
-                    "Property": "Valor Venta"
+                  "SourceRef": {
+                    "Entity": "Ventas"
                   }
                 },
-                "Function": 0
+                "Property": "Sum Valor Venta. YTD"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {

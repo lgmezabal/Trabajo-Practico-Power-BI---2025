@@ -1,6 +1,16 @@
 table Ventas
 	lineageTag: 5edd011d-5eb3-46d8-b97a-9764c017230f
 
+	measure 'Sum. Valor Venta' = SUM(Ventas[Valor Venta])
+		lineageTag: 60422345-fdff-4404-b6b9-a98070f42556
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sum Valor Venta. YTD' = CALCULATE([Sum. Valor Venta], DATESYTD(Tiempo[Date]))
+		lineageTag: 27decea5-2183-415e-a152-397ce5bcfff0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column SK_Cliente
 		dataType: int64
 		formatString: 0
@@ -84,19 +94,16 @@ table Ventas
 
 	column 'Fecha Venta'
 		dataType: dateTime
-		formatString: Short Date
+		formatString: m/d/yyyy
 		lineageTag: 64c42dba-f525-465a-abce-7d03f15fc568
 		summarizeBy: none
 		sourceColumn: Fecha Venta
 
-		variation Variación
-			isDefault
-			relationship: a0277641-a93e-47c4-a7bd-ce1a4122a6c6
-			defaultHierarchy: LocalDateTable_cc586e96-d08b-498b-9b62-f2b327aa3580.'Jerarquía de fechas'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column Fecha_Envio
 		dataType: dateTime
@@ -104,11 +111,6 @@ table Ventas
 		lineageTag: 7ca36845-5259-4d0e-bece-2469f998f0fb
 		summarizeBy: none
 		sourceColumn: Fecha_Envio
-
-		variation Variación
-			isDefault
-			relationship: 46a54c28-54cc-433f-8c2c-9e23f2b07049
-			defaultHierarchy: LocalDateTable_26d41204-dcd8-4173-8195-7a6c553a033c.'Jerarquía de fechas'
 
 		annotation SummarizationSetBy = Automatic
 

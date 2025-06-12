@@ -17,54 +17,17 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Ventas"
-                            }
-                          },
-                          "Name": "Variación",
-                          "Property": "Fecha Venta"
-                        }
-                      },
-                      "Hierarchy": "Jerarquía de fechas"
+                    "SourceRef": {
+                      "Entity": "Ventas"
                     }
                   },
-                  "Level": "Año"
+                  "Property": "Fecha Venta"
                 }
               },
               "queryRef": "Ventas.Fecha Venta.Variación.Jerarquía de fechas.Año",
               "nativeQueryRef": "Fecha Venta Año",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Ventas"
-                            }
-                          },
-                          "Name": "Variación",
-                          "Property": "Fecha Venta"
-                        }
-                      },
-                      "Hierarchy": "Jerarquía de fechas"
-                    }
-                  },
-                  "Level": "Mes"
-                }
-              },
-              "queryRef": "Ventas.Fecha Venta.Variación.Jerarquía de fechas.Mes",
-              "nativeQueryRef": "Fecha Venta Mes",
               "active": true
             }
           ]
@@ -180,24 +143,13 @@
               "expr": {
                 "Aggregation": {
                   "Expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "Ventas"
-                                }
-                              },
-                              "Name": "Variación",
-                              "Property": "Fecha Venta"
-                            }
-                          },
-                          "Hierarchy": "Jerarquía de fechas"
+                        "SourceRef": {
+                          "Entity": "Ventas"
                         }
                       },
-                      "Level": "Mes"
+                      "Property": "Fecha Venta"
                     }
                   },
                   "Function": 3

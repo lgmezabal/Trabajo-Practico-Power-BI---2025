@@ -15,9 +15,6 @@ annotation PBIDesktopVersion = 2.142.1277.0 (25.04)+014fde450f93691fc9537f0758d7
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table Ventas
-ref table DateTableTemplate_36451f61-be02-48c5-a619-0e9ce7271a86
-ref table LocalDateTable_cc586e96-d08b-498b-9b62-f2b327aa3580
-ref table LocalDateTable_26d41204-dcd8-4173-8195-7a6c553a033c
 ref table CentroDistribucion
 ref table Cliente
 ref table Embalaje
@@ -26,6 +23,7 @@ ref table Prioridad
 ref table Producto
 ref table Provincia
 ref table SegmentoCliente
+ref table Tiempo
 
 ref cultureInfo es-ES
 

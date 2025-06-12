@@ -17,28 +17,17 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Ventas"
-                            }
-                          },
-                          "Name": "Variación",
-                          "Property": "Fecha Venta"
-                        }
-                      },
-                      "Hierarchy": "Jerarquía de fechas"
+                    "SourceRef": {
+                      "Entity": "Tiempo"
                     }
                   },
-                  "Level": "Año"
+                  "Property": "Año"
                 }
               },
-              "queryRef": "Ventas.Fecha Venta.Variación.Jerarquía de fechas.Año",
-              "nativeQueryRef": "Fecha Venta Año"
+              "queryRef": "Tiempo.Año",
+              "nativeQueryRef": "Suma de Año"
             }
           ]
         }
@@ -47,27 +36,21 @@
         "sort": [
           {
             "field": {
-              "HierarchyLevel": {
+              "Aggregation": {
                 "Expression": {
-                  "Hierarchy": {
+                  "Column": {
                     "Expression": {
-                      "PropertyVariationSource": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "Ventas"
-                          }
-                        },
-                        "Name": "Variación",
-                        "Property": "Fecha Venta"
+                      "SourceRef": {
+                        "Entity": "Tiempo"
                       }
                     },
-                    "Hierarchy": "Jerarquía de fechas"
+                    "Property": "Año"
                   }
                 },
-                "Level": "Año"
+                "Function": 0
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ],
         "isDefaultSort": true
@@ -82,8 +65,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "l",
-                    "Entity": "LocalDateTable_cc586e96-d08b-498b-9b62-f2b327aa3580",
+                    "Name": "t",
+                    "Entity": "Tiempo",
                     "Type": 0
                   }
                 ],
@@ -96,7 +79,7 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "l"
+                                  "Source": "t"
                                 }
                               },
                               "Property": "Año"
@@ -107,71 +90,10 @@
                           [
                             {
                               "Literal": {
-                                "Value": "2025L"
+                                "Value": "2022L"
                               }
                             }
                           ]
-                        ]
-                      }
-                    },
-                    "Annotations": {
-                      "filterExpressionMetadata": {
-                        "expressions": [
-                          {
-                            "HierarchyLevel": {
-                              "Expression": {
-                                "Hierarchy": {
-                                  "Expression": {
-                                    "PropertyVariationSource": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "Ventas"
-                                        }
-                                      },
-                                      "Name": "Variación",
-                                      "Property": "Fecha Venta"
-                                    }
-                                  },
-                                  "Hierarchy": "Jerarquía de fechas"
-                                }
-                              },
-                              "Level": "Año"
-                            }
-                          }
-                        ],
-                        "decomposedIdentities": {
-                          "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "2025L"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          ],
-                          "columns": [
-                            {
-                              "value": {
-                                "Column": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "LocalDateTable_cc586e96-d08b-498b-9b62-f2b327aa3580"
-                                    }
-                                  },
-                                  "Property": "Año"
-                                }
-                              }
-                            }
-                          ]
-                        },
-                        "valueMap": [
-                          {
-                            "0": "2025"
-                          }
                         ]
                       }
                     }

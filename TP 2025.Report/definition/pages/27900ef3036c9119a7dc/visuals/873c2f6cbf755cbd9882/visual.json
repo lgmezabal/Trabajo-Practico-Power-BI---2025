@@ -10,61 +10,24 @@
     "tabOrder": 0
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "areaChart",
     "query": {
       "queryState": {
         "Category": {
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Ventas"
-                            }
-                          },
-                          "Name": "Variación",
-                          "Property": "Fecha Venta"
-                        }
-                      },
-                      "Hierarchy": "Jerarquía de fechas"
+                    "SourceRef": {
+                      "Entity": "Tiempo"
                     }
                   },
-                  "Level": "Año"
+                  "Property": "Mes Corto"
                 }
               },
-              "queryRef": "Ventas.Fecha Venta.Variación.Jerarquía de fechas.Año",
-              "nativeQueryRef": "Fecha Venta Año",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Ventas"
-                            }
-                          },
-                          "Name": "Variación",
-                          "Property": "Fecha Venta"
-                        }
-                      },
-                      "Hierarchy": "Jerarquía de fechas"
-                    }
-                  },
-                  "Level": "Mes"
-                }
-              },
-              "queryRef": "Ventas.Fecha Venta.Variación.Jerarquía de fechas.Mes",
-              "nativeQueryRef": "Fecha Venta Mes",
+              "queryRef": "Tiempo.Mes Corto",
+              "nativeQueryRef": "Mes Corto",
               "active": true
             }
           ]
@@ -73,25 +36,38 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Ventas"
-                        }
-                      },
-                      "Property": "Valor Venta"
+                    "SourceRef": {
+                      "Entity": "Ventas"
                     }
                   },
-                  "Function": 0
+                  "Property": "Sum. Valor Venta"
                 }
               },
-              "queryRef": "Sum(Ventas.Valor Venta)",
-              "nativeQueryRef": "Suma de Valor Venta"
+              "queryRef": "Ventas.Sum. Valor Venta",
+              "nativeQueryRef": "Sum. Valor Venta"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Ventas"
+                  }
+                },
+                "Property": "Sum. Valor Venta"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -114,7 +90,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -180,24 +156,13 @@
               "expr": {
                 "Aggregation": {
                   "Expression": {
-                    "HierarchyLevel": {
+                    "Column": {
                       "Expression": {
-                        "Hierarchy": {
-                          "Expression": {
-                            "PropertyVariationSource": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "Ventas"
-                                }
-                              },
-                              "Name": "Variación",
-                              "Property": "Fecha Venta"
-                            }
-                          },
-                          "Hierarchy": "Jerarquía de fechas"
+                        "SourceRef": {
+                          "Entity": "Ventas"
                         }
                       },
-                      "Level": "Mes"
+                      "Property": "Fecha Venta"
                     }
                   },
                   "Function": 3

@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
-        "y": 0
+        "x": 222.22221374511719,
+        "y": 114.03508504231772
       },
       "nodes": [
         {
           "location": {
             "x": 1129.5,
-            "y": 467.5
+            "y": 475.625
           },
           "nodeIndex": "Ventas",
           "nodeLineageTag": "5edd011d-5eb3-46d8-b97a-9764c017230f",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 132.5,
-            "y": 874
+            "y": 882.125
           },
           "nodeIndex": "CentroDistribucion",
           "nodeLineageTag": "395c0445-4d25-4a58-965a-39d1cfa34460",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 31.5,
-            "y": 467
+            "y": 475.125
           },
           "nodeIndex": "Cliente",
           "nodeLineageTag": "0bd9dc5f-78ff-4ebc-8f31-e9ec680e7032",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 438,
-            "y": 31.5
+            "y": 39.625
           },
           "nodeIndex": "Embalaje",
           "nodeLineageTag": "e98c895b-46bc-433d-a38b-9ceb1ae429b7",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 967,
-            "y": 22.5
+            "y": 30.625
           },
           "nodeIndex": "FormaDeEnvio",
           "nodeLineageTag": "db466178-e450-4e1f-ba3f-1488f33e47a3",
@@ -76,7 +76,7 @@
         {
           "location": {
             "x": 1491,
-            "y": 94
+            "y": 102.125
           },
           "nodeIndex": "Prioridad",
           "nodeLineageTag": "2cb16d48-9a56-4962-a4ab-0215ec7c8f3e",
@@ -89,7 +89,7 @@
         {
           "location": {
             "x": 1940,
-            "y": 2
+            "y": 10.125
           },
           "nodeIndex": "Producto",
           "nodeLineageTag": "f4fd734c-d9c9-4587-8e80-09006bef4cc4",
@@ -102,7 +102,7 @@
         {
           "location": {
             "x": 2151.5,
-            "y": 508
+            "y": 516.125
           },
           "nodeIndex": "Provincia",
           "nodeLineageTag": "6dfaae17-7241-4102-b9cd-8e59560231ae",
@@ -115,7 +115,7 @@
         {
           "location": {
             "x": 1520.5,
-            "y": 976.5
+            "y": 984.625
           },
           "nodeIndex": "SegmentoCliente",
           "nodeLineageTag": "9f02f19e-d411-49fd-8627-50b00063496e",
@@ -124,10 +124,23 @@
             "width": 234
           },
           "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1951.5,
+            "y": 849.125
+          },
+          "nodeIndex": "Tiempo",
+          "nodeLineageTag": "59b854c5-2f1f-433a-b21e-f84d43cf24f7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",
-      "zoomValue": 40,
+      "zoomValue": 60,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

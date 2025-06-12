@@ -1,0 +1,145 @@
+table Tiempo
+	lineageTag: 59b854c5-2f1f-433a-b21e-f84d43cf24f7
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: eb6156ff-0038-4396-a20f-4f4584fc95c6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Fecha'
+		lineageTag: f89b4b2c-654d-4d1f-bcde-d918303004c3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Codigo Fecha]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		formatString: 0
+		lineageTag: 394e4bab-79e7-47b0-97b4-b020b5cb31fb
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Año]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		lineageTag: 6e9d2a5c-ae3b-48b7-a45a-90d647b0f9f3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Mes'
+		lineageTag: 6322f07a-519e-4e49-86a4-9879c8677366
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Codigo Mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anio Mes Corto'
+		lineageTag: a2aa137f-773c-43d1-8c06-cecf1801b0e9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Anio Mes Corto]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes Corto'
+		lineageTag: a20ddcfd-362c-496a-aa1b-6aff833dc90f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mes Corto]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes Largo'
+		lineageTag: 6a6265cf-a6fc-4c49-979d-2e74d85e86d4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mes Largo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Dia Semana'
+		formatString: 0
+		lineageTag: 6efbedf6-842a-4e61-9baf-5643ca401d49
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Codigo Dia Semana]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia Semana'
+		lineageTag: 8834fc67-7835-4c38-9ed7-923c4e41756b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dia Semana]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia Semana Corto'
+		lineageTag: afc2f887-bf23-46a2-9de1-206f098d3aae
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dia Semana Corto]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Trimeste'
+		formatString: 0
+		lineageTag: 53dae6f3-44d7-4481-8bc4-f8379194e201
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Codigo Trimeste]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		lineageTag: d8564d29-b5b0-4191-8fce-f5f1663c181f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Trimestre]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anio Trimestre'
+		lineageTag: 5f1962e0-ae0a-4f79-8851-0892d60863da
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Anio Trimestre]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Tiempo = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS (
+				CALENDAR (DATE(2021,05,01), DATE(2025,05,01)
+				),
+				"Codigo Fecha", FORMAT ( [Date], "YYYYMMDD" ),
+				"Año", YEAR ( [Date] ),
+				"Mes", FORMAT ( [Date], "MM" ),
+				"Codigo Mes", FORMAT ( [Date], "YYYYMM" ),
+				"Anio Mes Corto", FORMAT ( [Date], "YYYY" ) & " " & UPPER(LEFT(FORMAT([Date], "mmm"), 1)) & RIGHT(FORMAT([Date], "mmm"), LEN(FORMAT([Date], "mmm")) - 1),
+				"Mes Corto", UPPER(LEFT(FORMAT([Date], "mmm"), 1)) & RIGHT(FORMAT([Date], "mmm"), LEN(FORMAT([Date], "mmm")) - 1),
+				"Mes Largo", UPPER(LEFT(FORMAT([Date], "mmmm"), 1)) & RIGHT(FORMAT([Date], "mmmm"), LEN(FORMAT([Date], "mmmm")) - 1),
+				"Codigo Dia Semana", WEEKDAY ( [Date] ),
+				"Dia Semana", UPPER(LEFT(FORMAT([Date], "dddd"), 1)) & RIGHT(FORMAT([Date], "dddd"), LEN(FORMAT([Date], "dddd")) - 1),
+				"Dia Semana Corto", UPPER(LEFT(FORMAT([Date], "ddd"), 1)) & RIGHT(FORMAT([Date], "ddd"), LEN(FORMAT([Date], "ddd")) - 1),
+				"Codigo Trimeste" , YEAR ( [Date] ) * 100 + QUARTER([Date]),
+				"Trimestre", "Q" & FORMAT ( [Date], "Q" ),
+				"Anio Trimestre", FORMAT ( [Date], "YYYY" ) & " Q" & FORMAT ( [Date], "Q" )
+				)
+
+	annotation PBI_Id = eb6fb68a104142e89b8864937077865f
+

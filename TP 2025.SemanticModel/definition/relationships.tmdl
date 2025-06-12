@@ -1,13 +1,3 @@
-relationship a0277641-a93e-47c4-a7bd-ce1a4122a6c6
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Ventas.'Fecha Venta'
-	toColumn: LocalDateTable_cc586e96-d08b-498b-9b62-f2b327aa3580.Date
-
-relationship 46a54c28-54cc-433f-8c2c-9e23f2b07049
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Ventas.Fecha_Envio
-	toColumn: LocalDateTable_26d41204-dcd8-4173-8195-7a6c553a033c.Date
-
 relationship AutoDetected_17ec8ef7-8cc7-49be-a98d-8c48094e7d39
 	fromColumn: Ventas.SK_Cliente
 	toColumn: Cliente.SK_Cliente
@@ -39,4 +29,13 @@ relationship AutoDetected_9a40f7d8-d951-47cd-bda8-bb64ece197a5
 relationship AutoDetected_62cbda38-d4f5-4509-9d83-c30b9645bc3a
 	fromColumn: Ventas.SK_Embalaje
 	toColumn: Embalaje.SK_Embalaje
+
+relationship ccc032d7-9893-fde9-968b-3069af1dd640
+	fromColumn: Ventas.'Fecha Venta'
+	toColumn: Tiempo.Date
+
+relationship 8be8d16f-4def-0736-e201-f44d1234af50
+	isActive: false
+	fromColumn: Ventas.Fecha_Envio
+	toColumn: Tiempo.Date
 

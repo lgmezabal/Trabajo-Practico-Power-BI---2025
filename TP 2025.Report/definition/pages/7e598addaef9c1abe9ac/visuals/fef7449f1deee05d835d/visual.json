@@ -20,41 +20,68 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Ventas"
+                      "Entity": "Tiempo"
                     }
                   },
-                  "Property": "Fecha Venta"
+                  "Property": "Año"
                 }
               },
-              "queryRef": "Ventas.Fecha Venta.Variación.Jerarquía de fechas.Año",
-              "nativeQueryRef": "Fecha Venta Año"
+              "queryRef": "Tiempo.Año",
+              "nativeQueryRef": "Año"
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Ventas"
-                  }
-                },
-                "Property": "Fecha Venta"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
     "objects": {
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "t",
+                    "Entity": "Tiempo",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "t"
+                                }
+                              },
+                              "Property": "Año"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "2023L"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         }
       ],
       "shadowCustom": [

@@ -5,8 +5,8 @@
     "x": 0,
     "y": 0,
     "z": 1000,
-    "height": 348.75,
-    "width": 1280,
+    "height": 720.10608024553414,
+    "width": 1280.3242003009582,
     "tabOrder": 1000
   },
   "visual": {
@@ -20,14 +20,29 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Ventas"
+                      "Entity": "Tiempo"
                     }
                   },
-                  "Property": "Fecha Venta"
+                  "Property": "Mes"
                 }
               },
-              "queryRef": "Ventas.Fecha Venta.Variación.Jerarquía de fechas.Año",
-              "nativeQueryRef": "Fecha Venta Año",
+              "queryRef": "Tiempo.Mes",
+              "nativeQueryRef": "Mes",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Tiempo"
+                    }
+                  },
+                  "Property": "Mes Corto"
+                }
+              },
+              "queryRef": "Tiempo.Mes Corto",
+              "nativeQueryRef": "Mes Corto",
               "active": true
             }
           ]
@@ -54,22 +69,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Ventas"
-                        }
-                      },
-                      "Property": "Margen"
+                    "SourceRef": {
+                      "Entity": "Ventas"
                     }
                   },
-                  "Function": 5
+                  "Property": "Sum Margen. YTD"
                 }
               },
-              "queryRef": "CountNonNull(Ventas.Margen)",
-              "nativeQueryRef": "Margen"
+              "queryRef": "Ventas.Sum Margen. YTD",
+              "nativeQueryRef": "Sum Margen. YTD"
             }
           ]
         }
@@ -81,10 +91,23 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Ventas"
+                    "Entity": "Tiempo"
                   }
                 },
-                "Property": "Fecha Venta"
+                "Property": "Mes"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Tiempo"
+                  }
+                },
+                "Property": "Mes Corto"
               }
             },
             "direction": "Ascending"

@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
-  "name": "df6ce27261ad2ee7efef",
+  "name": "1a58e695cbb5fbc6311d",
   "position": {
-    "x": 320,
-    "y": 0,
-    "z": 1000,
-    "height": 360,
-    "width": 640,
-    "tabOrder": 1000
+    "x": 9.7641502406174112,
+    "y": 175.7547043311134,
+    "z": 0,
+    "height": 544.35137591442071,
+    "width": 1270.5600500603407,
+    "tabOrder": 0
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -36,22 +36,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Ventas"
-                        }
-                      },
-                      "Property": "Valor Venta"
+                    "SourceRef": {
+                      "Entity": "Ventas"
                     }
                   },
-                  "Function": 0
+                  "Property": "Sum. Valor Venta"
                 }
               },
-              "queryRef": "Sum(Ventas.Valor Venta)",
-              "nativeQueryRef": "Suma de Valor Venta"
+              "queryRef": "Ventas.Sum. Valor Venta",
+              "nativeQueryRef": "Sum. Valor Venta"
             }
           ]
         }
@@ -60,18 +55,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Ventas"
-                      }
-                    },
-                    "Property": "Valor Venta"
+                  "SourceRef": {
+                    "Entity": "Ventas"
                   }
                 },
-                "Function": 0
+                "Property": "Sum. Valor Venta"
               }
             },
             "direction": "Descending"
@@ -80,48 +70,12 @@
         "isDefaultSort": true
       }
     },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Top 10 Clientes '"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "bf8d82de35e13161d393",
-        "ordinal": 0,
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Ventas"
-                  }
-                },
-                "Property": "Valor Venta"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "fd0b9b46abdbfbdd0b6d",
-        "ordinal": 1,
+        "name": "235474d591ba7e191549",
         "field": {
           "Column": {
             "Expression": {
@@ -171,18 +125,13 @@
                       {
                         "Direction": 2,
                         "Expression": {
-                          "Aggregation": {
+                          "Measure": {
                             "Expression": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "v"
-                                  }
-                                },
-                                "Property": "Valor Venta"
+                              "SourceRef": {
+                                "Source": "v"
                               }
                             },
-                            "Function": 0
+                            "Property": "Sum. Valor Venta"
                           }
                         }
                       }
@@ -227,38 +176,19 @@
         }
       },
       {
-        "name": "2595c5961762fdc6b9ef",
-        "ordinal": 2,
+        "name": "8b843ac1682f869549fb",
         "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "SegmentoCliente"
-              }
-            },
-            "Property": "SegmentoCliente"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User"
-      },
-      {
-        "name": "9974b3ba64fc68895ead",
-        "ordinal": 3,
-        "field": {
-          "Column": {
+          "Measure": {
             "Expression": {
               "SourceRef": {
                 "Entity": "Ventas"
               }
             },
-            "Property": "SK_SegmentoCliente"
+            "Property": "Sum. Valor Venta"
           }
         },
-        "type": "Advanced",
-        "howCreated": "User"
+        "type": "Advanced"
       }
-    ],
-    "filterSortOrder": "Custom"
+    ]
   }
 }

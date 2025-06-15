@@ -121,6 +121,11 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "Provincia2",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
   }
 }

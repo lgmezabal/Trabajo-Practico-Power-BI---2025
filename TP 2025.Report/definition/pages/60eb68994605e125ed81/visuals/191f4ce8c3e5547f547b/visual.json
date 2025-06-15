@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "name": "191f4ce8c3e5547f547b",
+  "position": {
+    "x": 460.13558008909553,
+    "y": 0,
+    "z": 2000,
+    "height": 175.7547043311134,
+    "width": 245.32427479551245,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "advancedSlicerVisual",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Tiempo"
+                    }
+                  },
+                  "Property": "Año"
+                }
+              },
+              "queryRef": "Tiempo.Año",
+              "nativeQueryRef": "Año"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "syncGroup": {
+      "groupName": "Año",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

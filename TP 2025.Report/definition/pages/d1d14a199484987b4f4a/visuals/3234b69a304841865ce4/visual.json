@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "name": "3234b69a304841865ce4",
+  "position": {
+    "x": 9.5321496293742456,
+    "y": 128.68401999655231,
+    "z": 0,
+    "height": 590.9932770212032,
+    "width": 1270.9532839165661,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Producto"
+                    }
+                  },
+                  "Property": "Producto"
+                }
+              },
+              "queryRef": "Producto.Producto",
+              "nativeQueryRef": "Producto",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ventas"
+                    }
+                  },
+                  "Property": "DescuentoPromedio"
+                }
+              },
+              "queryRef": "Ventas.DescuentoPromedio",
+              "nativeQueryRef": "DescuentoPromedio"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Ventas"
+                  }
+                },
+                "Property": "DescuentoPromedio"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "name": "12ba523634b6d2df1818",
+  "position": {
+    "x": 9.5321496293742456,
+    "y": 0,
+    "z": 0,
+    "height": 719.67729701775556,
+    "width": 1270.9532839165661,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Producto"
+                    }
+                  },
+                  "Property": "Producto"
+                }
+              },
+              "queryRef": "Producto.Producto",
+              "nativeQueryRef": "Producto",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ventas"
+                    }
+                  },
+                  "Property": "CostoEnvioPromedio"
+                }
+              },
+              "queryRef": "Ventas.CostoEnvioPromedio",
+              "nativeQueryRef": "CostoEnvioPromedio"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Ventas"
+                  }
+                },
+                "Property": "CostoEnvioPromedio"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

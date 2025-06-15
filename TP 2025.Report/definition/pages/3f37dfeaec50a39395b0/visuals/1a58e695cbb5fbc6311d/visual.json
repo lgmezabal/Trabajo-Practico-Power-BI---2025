@@ -174,20 +174,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "8b843ac1682f869549fb",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Ventas"
-              }
-            },
-            "Property": "Sum. Valor Venta"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

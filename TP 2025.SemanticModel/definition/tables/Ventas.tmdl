@@ -21,6 +21,24 @@ table Ventas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure CantidadVendida = SUM(Ventas[Cantidad])
+		formatString: 0
+		lineageTag: 147aa636-c754-4df3-8d62-c193100394a9
+
+	measure CantidadEnvios = DISTINCTCOUNT(Ventas[Numero_Orden])
+		formatString: 0
+		lineageTag: eca07687-84a3-4a45-a144-2062bac8021e
+
+	measure CostoEnvioPromedio = AVERAGE(Ventas[Costo Envio])
+		lineageTag: 9292ff72-f408-4c82-8b91-ca1a10b4abbd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure DescuentoPromedio = AVERAGE(Ventas[Descuento])
+		lineageTag: 786e49b5-15ae-423f-8ba6-bcd0ec5e66b1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column SK_Cliente
 		dataType: int64
 		formatString: 0

@@ -36,22 +36,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Ventas"
-                        }
-                      },
-                      "Property": "Cantidad"
+                    "SourceRef": {
+                      "Entity": "Ventas"
                     }
                   },
-                  "Function": 0
+                  "Property": "CantidadVendida"
                 }
               },
-              "queryRef": "Sum(Ventas.Cantidad)",
-              "nativeQueryRef": "Suma de Cantidad"
+              "queryRef": "Ventas.CantidadVendida",
+              "nativeQueryRef": "CantidadVendida"
             }
           ]
         }
@@ -60,18 +55,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Ventas"
-                      }
-                    },
-                    "Property": "Cantidad"
+                  "SourceRef": {
+                    "Entity": "Ventas"
                   }
                 },
-                "Function": 0
+                "Property": "CantidadVendida"
               }
             },
             "direction": "Descending"

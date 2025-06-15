@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
   "name": "7d99c09bfa1a88c9624b",
   "position": {
-    "x": 10,
+    "x": 114.38579555249095,
     "y": 0,
     "z": 0,
-    "height": 720,
-    "width": 1270,
+    "height": 621.17841751422168,
+    "width": 1166.0996379934495,
     "tabOrder": 0
   },
   "visual": {
@@ -36,22 +36,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Ventas"
-                        }
-                      },
-                      "Property": "Cantidad"
+                    "SourceRef": {
+                      "Entity": "Ventas"
                     }
                   },
-                  "Function": 0
+                  "Property": "CantidadVendida"
                 }
               },
-              "queryRef": "Sum(Ventas.Cantidad)",
-              "nativeQueryRef": "Suma de Cantidad"
+              "queryRef": "Ventas.CantidadVendida",
+              "nativeQueryRef": "CantidadVendida"
             }
           ]
         }
@@ -60,18 +55,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Ventas"
-                      }
-                    },
-                    "Property": "Cantidad"
+                  "SourceRef": {
+                    "Entity": "Ventas"
                   }
                 },
-                "Function": 0
+                "Property": "CantidadVendida"
               }
             },
             "direction": "Descending"

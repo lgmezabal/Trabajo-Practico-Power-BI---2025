@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "name": "2b8691cd937a2983eba3",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 3,
+    "height": 47.76669507728456,
+    "width": 347.10465089493448,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Lo que sucede es que varios productos tienen descuento solo 1 vez entonces sus promedio se parecen mucho"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

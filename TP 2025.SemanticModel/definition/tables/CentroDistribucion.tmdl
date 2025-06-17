@@ -30,7 +30,7 @@ table CentroDistribucion
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\CentroDistribucion.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents(varFolderPath & "\Base\CentroDistribucion.xlsx"), null, true),
 				    CentroDistribucion_Sheet = Origen{[Item="CentroDistribucion",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(CentroDistribucion_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_CentroDistribucion", Int64.Type}, {"Codigo_CentroDistribucion", type text}, {"CentroDistribucion", type text}})

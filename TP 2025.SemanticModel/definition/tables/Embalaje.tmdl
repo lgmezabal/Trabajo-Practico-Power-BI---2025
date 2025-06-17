@@ -30,7 +30,7 @@ table Embalaje
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\Embalaje.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents(varFolderPath & "\Base\Embalaje.xlsx"), null, true),
 				    Embalaje_Sheet = Origen{[Item="Embalaje",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Embalaje_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_Embalaje", Int64.Type}, {"Codigo_Embalaje", type text}, {"Embalaje", type text}})

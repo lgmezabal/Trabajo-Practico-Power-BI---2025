@@ -30,7 +30,7 @@ table Prioridad
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\Prioridad.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents(varFolderPath & "\Base\Prioridad.xlsx"), null, true),
 				    Prioridad_Sheet = Origen{[Item="Prioridad",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Prioridad_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Sk_Prioridad", Int64.Type}, {"Codigo_Prioridad", type text}, {"Prioridad", type text}})

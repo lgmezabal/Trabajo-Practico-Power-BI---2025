@@ -42,7 +42,7 @@ table Cliente
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\Cliente.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents(varFolderPath & "\Base\Cliente.xlsx"), null, true),
 				    Cliente_Sheet = Origen{[Item="Cliente",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Cliente_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_Cliente", Int64.Type}, {"Cliente", type text}, {"Latitud", type number}, {"Longitud", type number}})

@@ -217,7 +217,7 @@ table Ventas
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\Ventas.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents(varFolderPath & "\Base\Ventas.xlsx"), null, true),
 				    Ventas_Sheet = Origen{[Item="Ventas",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Ventas_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_Cliente", Int64.Type}, {"SK_SegmentoCliente", Int64.Type}, {"SK_Producto", Int64.Type}, {"SK_Provincia", Int64.Type}, {"SK_CentroDistribucion", Int64.Type}, {"SK_Prioridad", Int64.Type}, {"SK_FormaDeEnvio", Int64.Type}, {"SK_Embalaje", Int64.Type}, {"Numero_Orden", Int64.Type}, {"Fecha Venta", type date}, {"Fecha_Envio", type date}, {"Cantidad", Int64.Type}, {"Valor Venta", type number}, {"Descuento", type number}, {"Lucro", type number}, {"Precio Unitario", type number}, {"Costo Envio", type number}, {"CEP", Int64.Type}, {"Margen", type number}, {"Numero_Registro", Int64.Type}})

@@ -1,0 +1,23 @@
+table varFolderPath
+	lineageTag: da506046-97ec-4fd6-ba4d-5e6832c5a423
+
+	column varFolderPath
+		dataType: string
+		lineageTag: ad4e7e97-7f86-4b29-b9e5-01148a83c102
+		summarizeBy: none
+		sourceColumn: varFolderPath
+
+		annotation SummarizationSetBy = Automatic
+
+	partition varFolderPath = m
+		mode: import
+		source =
+				let
+				    Source = "C:\Projs\MY_CustomProjects\Trabajo-Practico-Power-BI---2025"
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

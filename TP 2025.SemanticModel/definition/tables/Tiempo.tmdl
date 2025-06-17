@@ -50,6 +50,7 @@ table Tiempo
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Anio Mes Corto]
+		sortByColumn: 'Codigo Mes'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -58,6 +59,7 @@ table Tiempo
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Mes Corto]
+		sortByColumn: Mes
 
 		annotation SummarizationSetBy = Automatic
 
@@ -66,6 +68,7 @@ table Tiempo
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Mes Largo]
+		sortByColumn: Mes
 
 		annotation SummarizationSetBy = Automatic
 
@@ -83,6 +86,7 @@ table Tiempo
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Dia Semana]
+		sortByColumn: 'Codigo Dia Semana'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -91,6 +95,7 @@ table Tiempo
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Dia Semana Corto]
+		sortByColumn: 'Codigo Dia Semana'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -116,6 +121,7 @@ table Tiempo
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Anio Trimestre]
+		sortByColumn: 'Codigo Trimeste'
 
 		annotation SummarizationSetBy = Automatic
 

@@ -58,6 +58,7 @@ table Tiempo
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Mes Corto]
+		sortByColumn: Mes
 
 		annotation SummarizationSetBy = Automatic
 

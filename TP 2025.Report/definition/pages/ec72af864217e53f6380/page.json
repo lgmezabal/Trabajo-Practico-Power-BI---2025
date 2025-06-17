@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
   "name": "ec72af864217e53f6380",
   "displayName": "3- Tipo de Envio con Mayor Valor Vendido",
   "displayOption": "FitToPage",

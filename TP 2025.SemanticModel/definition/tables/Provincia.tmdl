@@ -54,7 +54,7 @@ table Provincia
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\Provincia.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents(varFolderPath & "\Base\Provincia.xlsx"), null, true),
 				    Provincia_Sheet = Origen{[Item="Provincia",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Provincia_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_Provincia", Int64.Type}, {"Codigo_Provincia", type text}, {"Provincia", type text}, {"Region", type text}, {"Pais", type text}, {"Gerente", type text}})

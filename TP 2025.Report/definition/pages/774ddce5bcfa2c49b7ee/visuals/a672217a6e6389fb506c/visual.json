@@ -55,13 +55,13 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Ventas"
+                    "Entity": "Tiempo"
                   }
                 },
-                "Property": "Sum Valor Venta. YTD"
+                "Property": "Mes Corto"
               }
             },
             "direction": "Ascending"
@@ -85,5 +85,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "21517c6949d8a07af752",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Tiempo"
+              }
+            },
+            "Property": "Mes Corto"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a9aa047909e321046b47",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Ventas"
+              }
+            },
+            "Property": "Sum Valor Venta. YTD"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

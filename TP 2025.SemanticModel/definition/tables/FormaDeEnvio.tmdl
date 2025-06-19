@@ -47,7 +47,7 @@ table FormaDeEnvio
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\FormaDeEnvio.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents(varFolderPath & "\Base\FormaDeEnvio.xlsx"), null, true),
 				    FormaDeEnvio_Sheet = Origen{[Item="FormaDeEnvio",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(FormaDeEnvio_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_FormaDeEnvio", Int64.Type}, {"Codigo_FormaDeEnvio", type text}, {"FormaDeEnvio", type text}, {"Costo", Int64.Type}, {"Empresa", type text}})

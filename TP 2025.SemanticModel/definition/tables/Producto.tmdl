@@ -38,7 +38,7 @@ table Producto
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\Producto.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents(varFolderPath & "\Base\Producto.xlsx"), null, true),
 				    Producto_Sheet = Origen{[Item="Producto",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Producto_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_Producto", Int64.Type}, {"Producto", type text}, {"SubCategoriaProducto", type text}, {"Categoria de Producto", type text}})

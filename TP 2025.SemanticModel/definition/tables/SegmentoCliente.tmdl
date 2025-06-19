@@ -30,7 +30,7 @@ table SegmentoCliente
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents("C:\Users\Lucio\Documents\Facultad\Cursando\Inteligencia de Negocios\Trabajo Practico Power BI - 2025\Base\SegmentoCliente.xlsx"), null, true),
+				    Origen = Excel.Workbook(File.Contents(varFolderPath & "\Base\SegmentoCliente.xlsx"), null, true),
 				    SegmentoCliente_Sheet = Origen{[Item="SegmentoCliente",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(SegmentoCliente_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SK_SegmentoCliente", Int64.Type}, {"Codigo_SegmentoCliente", type text}, {"SegmentoCliente", type text}})

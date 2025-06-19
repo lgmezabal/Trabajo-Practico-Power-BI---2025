@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "b63d033dbc5df9ca71cb",
+  "name": "6c8d1563057210659e8a",
   "position": {
-    "x": 746.2219253184677,
-    "y": 0,
-    "z": 2000,
-    "height": 147.54601368316787,
-    "width": 254.75570707885097,
-    "tabOrder": 2000
+    "x": 445.82248738798921,
+    "y": 3.1844463384856372,
+    "z": 3003,
+    "height": 146.48453157033933,
+    "width": 280.23127778673609,
+    "tabOrder": 3003
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Tiempo"
+                      "Entity": "Producto"
                     }
                   },
-                  "Property": "Mes Corto"
+                  "Property": "Categoria de Producto"
                 }
               },
-              "queryRef": "Tiempo.Mes Corto",
-              "nativeQueryRef": "Mes Corto"
+              "queryRef": "Producto.Categoria de Producto",
+              "nativeQueryRef": "Categoria de Producto"
             }
           ]
         }
@@ -41,7 +41,7 @@
       ]
     },
     "syncGroup": {
-      "groupName": "Mes Corto",
+      "groupName": "Categoria de Producto",
       "fieldChanges": true,
       "filterChanges": true
     },
@@ -50,15 +50,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3b1a1845c5daa40e4de0",
+        "name": "c20fa490dbc3e745b5d6",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Tiempo"
+                "Entity": "Producto"
               }
             },
-            "Property": "Mes Corto"
+            "Property": "Categoria de Producto"
           }
         },
         "type": "Categorical"

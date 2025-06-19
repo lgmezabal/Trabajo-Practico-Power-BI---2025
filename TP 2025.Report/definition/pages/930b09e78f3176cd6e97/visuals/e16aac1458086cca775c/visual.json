@@ -1,0 +1,102 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "e16aac1458086cca775c",
+  "position": {
+    "x": 0,
+    "y": 176.20603072953861,
+    "z": 3001,
+    "height": 543.47884176821549,
+    "width": 1280.1474280712262,
+    "tabOrder": 3001
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ventas"
+                    }
+                  },
+                  "Property": "CantidadConDescuento"
+                }
+              },
+              "queryRef": "Ventas.CantidadConDescuento",
+              "nativeQueryRef": "CantidadConDescuento"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ventas"
+                    }
+                  },
+                  "Property": "CantidadSinDescuento"
+                }
+              },
+              "queryRef": "Ventas.CantidadSinDescuento",
+              "nativeQueryRef": "CantidadSinDescuento"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Ventas"
+                  }
+                },
+                "Property": "CantidadConDescuento"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b03869d7423274ec42a6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Ventas"
+              }
+            },
+            "Property": "CantidadConDescuento"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "343332a987c852019b45",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Ventas"
+              }
+            },
+            "Property": "CantidadSinDescuento"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

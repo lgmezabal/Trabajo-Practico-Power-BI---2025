@@ -51,6 +51,38 @@ table Ventas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure CantidadConDescuento =
+			
+			CALCULATE(
+			    SUM(Ventas[Cantidad]),
+			    Ventas[Descuento] > 0
+			)
+		formatString: 0
+		lineageTag: 91365680-55ee-4f58-8da9-bb2701dcf11b
+
+	measure CantidadSinDescuento =
+			
+			CALCULATE(
+			    SUM(Ventas[Cantidad]),
+			    Ventas[Descuento] = 0 || ISBLANK(Ventas[Descuento])
+			)
+		formatString: 0
+		lineageTag: cf913fd1-de4f-4420-8186-ce31fff08416
+
+	measure PorcentajeCantidadConDescuento =
+			
+			DIVIDE([CantidadConDescuento], [CantidadVendida], 0)
+		lineageTag: 06687b20-edc9-4322-8d7c-315bbba0b641
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PorcentajeCantidadSinDescuento =
+			
+			DIVIDE([CantidadSinDescuento], [CantidadVendida], 0)
+		lineageTag: 4d7d7928-a7a9-4ade-afcf-550db55e8c29
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column SK_Cliente
 		dataType: int64
 		formatString: 0
@@ -256,5 +288,5 @@ table Ventas
 
 	annotation PBI_NavigationStepName = Navegación
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 

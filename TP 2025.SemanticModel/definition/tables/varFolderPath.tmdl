@@ -13,7 +13,7 @@ table varFolderPath
 		mode: import
 		source =
 				let
-				    Source = "C:\Projs\MY_CustomProjects\Trabajo-Practico-Power-BI---2025"
+				    Source = "C:\Users\Lucio\Documents\Facultad\Trabajo-Practico-Power-BI---2025"
 				in
 				    Source
 

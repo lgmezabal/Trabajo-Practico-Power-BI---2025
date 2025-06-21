@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Ventas"
+                      "Entity": "Tiempo"
                     }
                   },
-                  "Property": "Fecha Venta"
+                  "Property": "Mes Corto"
                 }
               },
-              "queryRef": "Ventas.Fecha Venta.Variación.Jerarquía de fechas.Año",
-              "nativeQueryRef": "Fecha Venta Año",
+              "queryRef": "Tiempo.Mes Corto",
+              "nativeQueryRef": "Mes Corto",
               "active": true
             }
           ]

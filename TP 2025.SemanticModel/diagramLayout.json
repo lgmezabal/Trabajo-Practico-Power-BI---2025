@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 28.070175170898438,
-        "y": 0
+        "x": 363.4285714285711,
+        "y": 225.78946794782365
       },
       "nodes": [
         {
@@ -140,8 +140,8 @@
         },
         {
           "location": {
-            "x": 2404,
-            "y": 516.3125
+            "x": 2208,
+            "y": 304.3125
           },
           "nodeIndex": "varFolderPath",
           "nodeLineageTag": "da506046-97ec-4fd6-ba4d-5e6832c5a423",
@@ -153,7 +153,7 @@
         }
       ],
       "name": "Todas las tablas",
-      "zoomValue": 50,
+      "zoomValue": 70,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

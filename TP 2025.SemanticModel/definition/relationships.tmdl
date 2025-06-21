@@ -18,10 +18,6 @@ relationship AutoDetected_5e8cb027-f424-48cb-99ca-bb58bc6c0564
 	fromColumn: Ventas.SK_CentroDistribucion
 	toColumn: CentroDistribucion.SK_CentroDistribucion
 
-relationship AutoDetected_4f1e365f-f8aa-4996-9d43-2cf449770d36
-	fromColumn: Ventas.SK_Prioridad
-	toColumn: Prioridad.Sk_Prioridad
-
 relationship AutoDetected_9a40f7d8-d951-47cd-bda8-bb64ece197a5
 	fromColumn: Ventas.SK_FormaDeEnvio
 	toColumn: FormaDeEnvio.SK_FormaDeEnvio
@@ -38,4 +34,8 @@ relationship 8be8d16f-4def-0736-e201-f44d1234af50
 	isActive: false
 	fromColumn: Ventas.Fecha_Envio
 	toColumn: Tiempo.Date
+
+relationship d89cec8f-50c7-7a42-0f68-0fa774747f85
+	fromColumn: Ventas.SK_Prioridad
+	toColumn: Prioridad.Sk_Prioridad
 

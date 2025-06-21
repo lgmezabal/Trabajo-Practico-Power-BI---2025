@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "c90c37e12e0e8f7d7848",
+  "name": "32c92fe3448111740e3a",
   "position": {
-    "x": 705.45985488460792,
-    "y": 0,
-    "z": 1000,
-    "height": 113.50824654717741,
-    "width": 574.86434541635015,
-    "tabOrder": 1000
+    "x": 844.93976181152243,
+    "y": 147.54601368316787,
+    "z": 2,
+    "height": 176.20603072953861,
+    "width": 246.26385017622263,
+    "tabOrder": 2
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -20,17 +20,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "SegmentoCliente"
+                      "Entity": "Tiempo"
                     }
                   },
-                  "Property": "SegmentoCliente"
+                  "Property": "Año"
                 }
               },
-              "queryRef": "SegmentoCliente.SegmentoCliente",
-              "nativeQueryRef": "SegmentoCliente"
+              "queryRef": "Tiempo.Año",
+              "nativeQueryRef": "Año"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -41,7 +44,7 @@
       ]
     },
     "syncGroup": {
-      "groupName": "SegmentoCliente",
+      "groupName": "Año",
       "fieldChanges": true,
       "filterChanges": true
     },

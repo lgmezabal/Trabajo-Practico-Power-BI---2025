@@ -42,11 +42,11 @@
                       "Entity": "Ventas"
                     }
                   },
-                  "Property": "CantidadVendida"
+                  "Property": "CantidadEnvios"
                 }
               },
-              "queryRef": "Ventas.CantidadVendida",
-              "nativeQueryRef": "CantidadVendida"
+              "queryRef": "Ventas.CantidadEnvios",
+              "nativeQueryRef": "CantidadEnvios"
             }
           ]
         }
@@ -61,7 +61,7 @@
                     "Entity": "Ventas"
                   }
                 },
-                "Property": "CantidadVendida"
+                "Property": "CantidadEnvios"
               }
             },
             "direction": "Descending"

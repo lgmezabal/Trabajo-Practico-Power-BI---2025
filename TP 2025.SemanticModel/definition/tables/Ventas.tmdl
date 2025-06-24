@@ -25,7 +25,7 @@ table Ventas
 		formatString: 0
 		lineageTag: 147aa636-c754-4df3-8d62-c193100394a9
 
-	measure CantidadEnvios = DISTINCTCOUNT(Ventas[Numero_Orden])
+	measure CantidadEnvios = COUNT(Ventas[Numero_Orden])
 		formatString: 0
 		lineageTag: eca07687-84a3-4a45-a144-2062bac8021e
 

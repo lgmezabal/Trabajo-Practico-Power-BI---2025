@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "2f857ae9810712ed3b69",
+  "position": {
+    "x": 274.92386722259334,
+    "y": 146.48453157033933,
+    "z": 0,
+    "height": 571.07737670175766,
+    "width": 744.09896109281055,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Embalaje"
+                    }
+                  },
+                  "Property": "Embalaje"
+                }
+              },
+              "queryRef": "Embalaje.Embalaje",
+              "nativeQueryRef": "Embalaje"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ventas"
+                    }
+                  },
+                  "Property": "CantidadEnvios"
+                }
+              },
+              "queryRef": "Ventas.CantidadEnvios",
+              "nativeQueryRef": "CantidadEnvios"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Ventas"
+                  }
+                },
+                "Property": "CantidadEnvios"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

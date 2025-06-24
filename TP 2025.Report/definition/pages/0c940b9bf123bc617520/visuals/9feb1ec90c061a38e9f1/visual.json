@@ -61,24 +61,18 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Column": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Ventas"
-                      }
-                    },
-                    "Property": "Valor Venta"
+                  "SourceRef": {
+                    "Entity": "Producto"
                   }
                 },
-                "Function": 0
+                "Property": "Producto"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {

@@ -10,7 +10,7 @@
     "tabOrder": 3001
   },
   "visual": {
-    "visualType": "advancedSlicerVisual",
+    "visualType": "listSlicer",
     "query": {
       "queryState": {
         "Values": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Producto.SubCategoriaProducto",
-              "nativeQueryRef": "SubCategoriaProducto"
+              "nativeQueryRef": "SubCategoriaProducto",
+              "active": true
             }
           ]
         }

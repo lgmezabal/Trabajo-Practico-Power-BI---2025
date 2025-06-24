@@ -70,6 +70,53 @@
         "isDefaultSort": true
       }
     },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Productos con mayor costo de envio promedio'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "73dfa675dac23e9be5e5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Producto"
+              }
+            },
+            "Property": "Producto"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5250bb21570a50c2532b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Ventas"
+              }
+            },
+            "Property": "CostoEnvioPromedio"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

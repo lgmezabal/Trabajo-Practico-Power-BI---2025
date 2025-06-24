@@ -67,7 +67,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Aéreo Rápido'"
+                                "Value": "'Transporte Rodoviário'"
                               }
                             }
                           ]
@@ -83,5 +83,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2bd4606bdd37737940c6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FormaDeEnvio"
+              }
+            },
+            "Property": "FormaDeEnvio"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

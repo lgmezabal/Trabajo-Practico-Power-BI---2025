@@ -42,11 +42,11 @@
                       "Entity": "Ventas"
                     }
                   },
-                  "Property": "PorcentajeCantidadSinDescuento"
+                  "Property": "CantidadSinDescuento"
                 }
               },
-              "queryRef": "Ventas.PorcentajeCantidadSinDescuento",
-              "nativeQueryRef": "PorcentajeCantidadSinDescuento"
+              "queryRef": "Ventas.CantidadSinDescuento",
+              "nativeQueryRef": "CantidadSinDescuento"
             }
           ]
         }
@@ -61,7 +61,7 @@
                     "Entity": "Ventas"
                   }
                 },
-                "Property": "PorcentajeCantidadSinDescuento"
+                "Property": "CantidadSinDescuento"
               }
             },
             "direction": "Descending"
@@ -69,6 +69,21 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Productos mas veces vendidos a valor original'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },
@@ -174,20 +189,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "30582b7d7611e0754475",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Ventas"
-              }
-            },
-            "Property": "PorcentajeCantidadSinDescuento"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

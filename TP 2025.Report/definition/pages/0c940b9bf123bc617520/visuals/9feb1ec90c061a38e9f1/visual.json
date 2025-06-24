@@ -51,7 +51,8 @@
                 }
               },
               "queryRef": "Sum(Ventas.Valor Venta)",
-              "nativeQueryRef": "Suma de Valor Venta"
+              "nativeQueryRef": "Suma de Valor Venta",
+              "format": "\\$ #,0.00;-\\$ #,0.00;\\$ #,0.00"
             }
           ]
         }
@@ -102,7 +103,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Distribución Porcentual de Ventas por Producto en Dinero'"
+                  "Value": "'Distribución Porcentual de Ventas por Producto ($)'"
                 }
               }
             },
@@ -145,5 +146,42 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5de992d43bc7779d27eb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Producto"
+              }
+            },
+            "Property": "Producto"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "45f667d099779b717d3c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Ventas"
+                  }
+                },
+                "Property": "Valor Venta"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
